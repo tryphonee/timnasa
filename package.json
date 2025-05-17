@@ -1,10 +1,4 @@
-Certainly! Here's a sample `package.json` configuration to set up a Node.js project using the Baileys library for WhatsApp Web API integration. This setup includes essential dependencies and a basic script to establish a connection.
 
----
-
-📦 Sample `package.json`
-
-```json
 {
   "name": "whatsapp-bot",
   "version": "1.0.0",
