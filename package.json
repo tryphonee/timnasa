@@ -1,25 +1,56 @@
+Certainly! Here's a sample `package.json` configuration to set up a Node.js project using the Baileys library for WhatsApp Web API integration. This setup includes essential dependencies and a basic script to establish a connection.
+
+---
+
+📦 Sample `package.json`
+
+```json
 {
-    "description": "wasisession",
-    "main": "./itxxwasi.js",
-  "engines" : { 
-    "npm" : ">=9.7.2",
-    "node" : ">=20.0.0"
-    },
-    "scripts": {
-    "start": "node itxxwasi.js"
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "description": "A WhatsApp bot using Baileys",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
   },
-  "author": "WasiTech",
-  "license": "GPL-3.0 license",
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.5.0",
-    "maher-zubair-baileys": "^6.6.5",
-    "qrcode": "^1.5.3",
-    "awesome-phonenumber": "^2.64.0",
-    "pino": "^8.1.0",
-    "phone" : "3.1.30",
-    "body-parser": "^1.20.1",
-    "pastebin-js": "^1.0.6",
-    "express": "^4.18.1",
-    "path": "^0.12.7"
-   }
+    "@whiskeysockets/baileys": "^6.7.16",
+    "pino": "^9.6.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
 }
+```
+
+*Note:* The version `6.7.16` is specified based on the latest available information. You can check for newer versions on the [npm package page](https://www.npmjs.com/package/@whiskeysockets/baileys).
+
+---
+
+🔧 Installation Steps
+
+1. *Initialize your project:*
+
+   ```bash
+   mkdir whatsapp-bot
+   cd whatsapp-bot
+   npm init -y
+   ```
+
+2. *Install dependencies:*
+
+   ```bash
+   npm install @whiskeysockets/baileys pino qrcode-terminal
+   ```
+
+---
+
+📝 Basic Connection Script (`index.js`)
+
+```javascript
+const { default: makeWASocket, useSingleFileAuthState } = require('@whiskeysockets/baileys');
+const { Boom } = require('@hapi/boom');
+const pino = require('pino');
+
+
+> By FredieTec
